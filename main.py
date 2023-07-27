@@ -46,7 +46,7 @@ app.secret_key =json.dumps(json.load(open("keys.json", "r"))["appSecretKey"])
 Mobility(app)
 app.config.update(
     OIDC_REDIRECT_URI = mode.server+"/redirect", # your application redirect uri. Must not be used in your code
-    SECRET_KEY = "lkjhlkjh" # your application secret code for session, random
+    SECRET_KEY = json.dumps(json.load(open("keys.json", "r"))["appSecretKey"]) # your application secret code for session, random
 )
 app.config['SESSION_PERMANENT'] = True
 app.config['SESSION_COOKIE_NAME'] = 'talao'
