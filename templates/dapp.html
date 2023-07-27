@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script> window.beaconSdkDebugEnabled = true    </script>
+  <script src="/static/walletbeacon.min.js"></script>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/png" href="/static/icon.png" sizes="16x16">
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <title>Altme Identity - Add an identity to your favorite wallet !</title>
+
+</head>
+
+<body>
+  <div id="page">
+    <div id="large">
+      <div id="body">
+        <nav class=" nav-02 ">
+          <div class="nav-02__box">
+            <div class="nav-02__logo"><a class="nav-02__link" href="https://altme.io/" target="_self">
+                <img loading="lazy" class="nav-02__logo_img"
+                  src="/static/altme-decentralized-identity-wallet-did-logo.webp" height="70"
+                  alt="Logo" />
+              </a></div>
+
+            <div class="nav-02__list_wrapper  ">
+              <div class="nav-02__list nav-02__list--desktop">
+                <!--<div class="nav-02__item">
+                  <a class="button   button--black-outline  button--empty " href="https://altme.io/#slider-07-879531"
+                    target="_self">
+                    <p class="linkP"> Wallet features
+                    </p>
+                  </a>
+                </div>
+                <div class="nav-02__item" id="newsNav">
+                  <a class="button   button--black-outline  button--empty " href="https://altme.io/#posts-05-876621"
+                    target="_self">
+                    <p class="linkP">News</p>
+
+                  </a>
+                </div>
+                <div class="nav-02__item" id="roadmapNav">
+                  <a href="https://altme.io/#features-09-390941" target="_self">
+                    <p class="linkP">Roadmap</p>
+
+                  </a>
+                </div>-->
+                <div class="nav-02__item" id="faqNav">
+                  <a class="button   button--black-outline  button--empty " href="https://altme.io/" target="_self">
+                    <p class="linkP">Back to home</p>
+                  </a>
+                </div>
+                <div class="nav-02__item">
+
+                  <a data-stripe-product-id="" data-stripe-mode="payment" data-successful-payment-url=""
+                    data-cancel-payment-url="" class="button button--accent-bg "
+                    href="mailto:contact@altme.io?cc=hugo@altme.io&subject=Altme" target="_blank">
+                    <div class="contactSpan">
+                      <p class="contactP">Contact</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </nav>
+
+        <div id="bigBox">
+          <div id="titles">
+            <p id="titleP">Mint your Tezos student NFT now</p>
+            <p id="textTopP">As a European graduate, you now have the chance to mint a unique Tezos NFT to access
+              exclusive advantages within the Tezos ecosystem.
+            </p>
+          </div>
+          <div id="mainBox">
+            <div id="leftBox">
+              <div id="leftTop">
+                <p id="step1">Step 2 : Pair your favorite Tezos wallet</p>
+
+                <p id="choose">Scan this 2nd QR code, pair your Tezos wallet, choose the address on which you want to
+                  mint and obtain your NFT !
+                </p>
+              </div>
+              <div id="leftMid">
+                <div id="frame4">
+
+                </div>
+
+                <div id="frame11">
+                  <div id="frame1">
+                    <button id="requestPermission5" class="transparent">
+                      <div class="box1">
+                        <div class="underbox1">
+                          <div class="frame2">
+                            <div><img id="beaconlogo" src="/static/kukai.png"></div>
+                            <div>
+                              <p class="walletText">Kukai Wallet</p>
+                            </div>
+                          </div>
+                          <div class="frame3"><img class="vector" src="/static/vector.png"></div>
+                        </div>
+                      </div>
+                    </button>
+                    <button id="requestPermission3" class="transparent">
+                      <div class="box1">
+                        <div class="underbox1">
+                          <div class="frame2">
+                            <div><img id="beaconlogo" src="/static/trustwallet.png"></div>
+                            <div>
+                              <p class="walletText">Trust Wallet
+                              </p>
+                            </div>
+                          </div>
+                          <div class="frame3"><img class="vector" src="/static/vector.png"></div>
+                        </div>
+                      </div>
+                    </button>
+                    <button id="requestPermission6" class="transparent">
+                      <div class="box2">
+                        <div class="underbox2">
+                          <div class="frame2">
+                            <img id="templelogo" src="/static/temple-wallet.png">
+
+                            <p class="walletText">Temple Mobile</p>
+
+                          </div>
+                          <div class="frame3"><img class="vector" src="/static/vector.png"></div>
+                        </div>
+                      </div>
+                    </button>
+                    <button id="requestPermission" class="transparent">
+                      <div class="box1">
+                        <div class="underbox1">
+                          <div class="frame2">
+                            <div><img id="beaconlogo" src="/static/umami.jpg"></div>
+                            <div>
+                              <p class="walletText">Umami</p>
+                            </div>
+                          </div>
+                          <div class="frame3"><img class="vector" src="/static/vector.png"></div>
+                        </div>
+                      </div>
+                    </button>
+                    <button id="requestPermission2" class="transparent">
+                      <div class="box2">
+                        <div class="underbox2">
+                          <div class="frame2">
+                            <img id="templelogo" src="/static/temple-wallet.png">
+
+                            <p class="walletText">Temple Web Extension</p>
+
+                          </div>
+                          <div class="frame3"><img class="vector" src="/static/vector.png"></div>
+                        </div>
+                      </div>
+                    </button>
+
+
+
+
+                    <button id="requestPermission4" class="transparent">
+                      <div class="box2">
+                        <div class="underbox2">
+                          <div class="frame2">
+                            <img id="templelogo" src="/static/airgap.png">
+
+                            <p class="walletText">Air Gap Wallet</p>
+
+                          </div>
+                          <div class="frame3"><img class="vector" src="/static/vector.png"></div>
+                        </div>
+                      </div>
+                    </button>
+                    <button id="requestPermission7" class="transparent">
+                      <div class="box1">
+                        <div class="underbox1">
+                          <div class="frame2">
+                            <div><img id="beaconlogo" src="/static/digitalartautonomy.webp"></div>
+                            <div>
+                              <p class="walletText">Digital Art Autonomy
+                              </p>
+                            </div>
+                          </div>
+                          <div class="frame3"><img class="vector" src="/static/vector.png"></div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div id="frame6">
+                <p id="ssi">** Self-Sovereign Identity (SSI) gives individuals control over the personal information
+                  they
+                  use across the web.</p>
+
+
+              </div>
+
+
+            </div>
+            <div id="rightBox"> <img id="draw" src="/static/diploma.png">
+              <button id="logout">Disconnect Wallet</button>
+              <button onclick="logoutOpenID()" id="logout2">Disconnect OpenID</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include 'faq.html' %}
+
+
+
+
+
+  </div>
+
+  <div class="bg-white-color ">
+    <footer class="footer-02" id="footer">
+      <div class="container">
+        <div class="footer-02__wrapper">
+          <div class="footer-02__text content_box">
+            <p id="line1Footer">&copy; 2022&nbsp; TALAO - Altme All rights reserved, <a href="https://altme.io/cgu/"
+                target="_blank">CGU</a>, <a href="https://altme.io/privacy/" target="_blank">Privacy</a></p>
+            <p id="line2Footer" hidden><strong>Built with TzKT API, Spruce Didkit 0.4.0</strong>&nbsp;</p>
+          </div>
+          <div class="social-buttons  ">
+
+            <div class="social-buttons__item"><a class="social-buttons__link social-buttons__link--twitter"
+                href="https://twitter.com/Altme_io" target="_blank"><img loading="lazy" class="social-buttons__icon"
+                  alt="twitter icon"
+                  src="https://dvzvtsvyecfyp.cloudfront.net/static/img/icons/social/black/twitter.svg" /></a></div>
+            <div class="social-buttons__item"><a class="social-buttons__link social-buttons__link--linkedin"
+                href="https://www.linkedin.com/company/altme-web3/" target="_blank"><img loading="lazy"
+                  class="social-buttons__icon" alt="linkedin icon"
+                  src="https://dvzvtsvyecfyp.cloudfront.net/static/img/icons/social/black/linkedin.svg" /></a></div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    var wallet = ""
+
+
+    //document.getElementById('altme').style.visibility = 'hidden';
+
+
+    // Initiate DAppClient
+    const client = beacon.getDAppClientInstance({
+      name: 'Altme', // Name of the DApp,
+      disclaimerText: '',
+      errorMessages: {
+
+      }
+
+    })
+
+    // Display the active account in the UI
+    const updateActiveAccount = () => {
+      client.getActiveAccount().then((activeAccount) => {
+        if (activeAccount) {
+          console.log(activeAccount)
+          console.log(activeAccount.publicKey)
+          console.log("activeaccount")
+
+
+        } else {
+
+        }
+      })
+    }
+    updateActiveAccount()
+
+
+    signPayloadOwning = async () => {
+      const signature = await client.requestSignPayload({
+        signingType: beacon.SigningType.MICHELINE,
+        payload: '{{nonce}}'
+      })
+      console.log('signature:', signature)
+      let link = "{{link}}";
+
+
+      client.getActiveAccount().then((activeAccount) => {
+        if (activeAccount) {
+          document.getElementById('logout').setAttribute('class', '')
+
+          fetch(link, { method: "GET", headers: { pubKey: activeAccount.publicKey, signature: signature.signature, address: activeAccount.address } }).then((res) => {
+            res.json().then((data) => {
+              /*console.log("data");
+              console.log(data);
+              console.log("data");*/
+              if (data.status === "ok") {
+                fetch("/", { method: "POST", headers: { wallet: wallet, cryptoWalletSignature: signature.signature } }).then((res) => {
+                  //document.location.href = res.url
+                  console.log("res")
+                  res.json().then(
+                    (ew)=>{console.log(ew)}
+                  )
+
+                })
+              }
+            });
+          });
+          console.log(activeAccount.publicKey)
+        }
+      })
+
+    }
+
+    // Initiate a permission request
+    const requestPermission = (callback) => {
+      client
+        .requestPermissions(/*{ network: { type: beacon.NetworkType.DELPHINET } }*/)
+        .then((permissions) => {
+          console.log('permissions', permissions)
+          wallet = ""
+          try {
+            wallet = permissions.appMetadata.name
+            console.log(wallet)
+          } catch (e) { console.log(e) }
+          if (callback) {
+            callback(permissions)
+          }
+          updateActiveAccount()
+          signPayloadOwning()
+        })
+        .catch((error) => {
+          console.log('error during permission request', error)
+        })
+    }
+
+    document.getElementById('logout').addEventListener('click', () => {
+      client.disconnect();
+      document.getElementById('logout').setAttribute('class', 'hidden')
+    })
+
+
+    // Add event listener to the button
+    document.getElementById('requestPermission').addEventListener('click', () => {
+      requestPermission()
+    })
+    document.getElementById('requestPermission2').addEventListener('click', () => {
+      requestPermission()
+    })
+    document.getElementById('requestPermission3').addEventListener('click', () => {
+      requestPermission()
+    })
+    document.getElementById('requestPermission4').addEventListener('click', () => {
+      requestPermission()
+    })
+    document.getElementById('requestPermission5').addEventListener('click', () => {
+      requestPermission()
+    })
+    document.getElementById('requestPermission6').addEventListener('click', () => {
+      requestPermission()
+    })
+    document.getElementById('requestPermission7').addEventListener('click', () => {
+      requestPermission()
+    })
+    function logoutOpenID() {
+      fetch('/logout', { method: 'POST' })
+    }
+    const items = document.querySelectorAll('.accordion button');
+    function toggleAccordion() {
+      const itemToggle = this.getAttribute('aria-expanded');
+      for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('aria-expanded', 'false');
+      }
+      if (itemToggle == 'false') {
+        this.setAttribute('aria-expanded', 'true');
+      }
+    }
+    items.forEach((item) => item.addEventListener('click', toggleAccordion));
+  </script>
+
+
+
+</body>
+
+</html>
