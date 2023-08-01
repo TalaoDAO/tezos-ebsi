@@ -1,9 +1,4 @@
-
-from hexbytes import HexBytes
-from eth_account.messages import encode_defunct,defunct_hash_message
-import hashlib
 from flask import Flask,render_template, request, jsonify, redirect,session, Response,send_file
-from flask_mobility import Mobility
 import uuid 
 from flask_qrcode import QRcode
 import json
@@ -13,7 +8,6 @@ import random
 import os
 import environment
 from datetime import datetime, timedelta
-import didkit
 from pytezos.crypto import key
 import logging
 import requests
@@ -44,7 +38,6 @@ PINATA_SECRET_API_KEY=json.load(open("keys.json", "r"))["pinata_secret_api_key"]
 app = Flask(__name__,static_folder=os.path.abspath('/home/achille/static'))
 QRcode(app)
 app.secret_key =json.load(open("keys.json", "r"))["appSecretKey"]
-Mobility(app)
 app.config.update(
     OIDC_REDIRECT_URI = mode.server+"redirect", # your application redirect uri. Must not be used in your code
     SECRET_KEY = json.dumps(json.load(open("keys.json", "r"))["appSecretKey"]) # your application secret code for session, random
