@@ -2,7 +2,9 @@
     font-family: Nunito;
     src: url(Nunito-VariableFont_wght.ttf);
 }
-
+.hidden{
+    display: none;
+}
 #logo {
     width: 127.11px;
     height: 33.15px;
