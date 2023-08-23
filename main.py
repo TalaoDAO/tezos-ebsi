@@ -83,7 +83,9 @@ def mint_nft(address):
         f"{DOMAIN}/fa2-token/{str(mint_call_resp.json()['id'])}/",
         headers=HEADERS,
     )
-    return mint_monitoring_resp.json()["state"]
+    nft = mint_monitoring_resp.json()
+    print(nft)
+    return nft["state"]
 
 
 def char2Bytes(text):
