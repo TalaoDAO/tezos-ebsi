@@ -315,16 +315,18 @@
                   res.json().then(
                     (res2) => {
                       console.log(res2)
-                      if (res2.status === "deploy") {
+                      if (res2.status === "deploy" || res2.status === "deploy") {
                         document.getElementById('frame11').remove()
+                        document.getElementById('frame4').remove()
+
                         let greenlogo = document.createElement("img")
                         document.getElementById("leftMid").appendChild(greenlogo);
                         greenlogo.setAttribute('id', 'qrcode')
-                        document.getElementById('qrcode').setAttribute('src', '/static/img/img/inProgress.png')
-                        /*let success = document.createElement("p")
+                        document.getElementById('qrcode').setAttribute('src', '/static/img/inProgress.png')
+                        let success = document.createElement("p")
                         document.getElementById("leftMid").appendChild(success);
                         success.setAttribute('id', 'success')
-                        success.innerHTML = "Success !"*/
+                        success.innerHTML = "The minting process verification is in progress, please come back in a few minutes. "
                       }
                     }
                   )
