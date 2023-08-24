@@ -78,8 +78,7 @@ def mint_nft(address):
         'owner': address,
         'token_id': token_id,
         'token_amount': 1,
-        #'ipfs_uri': "ipfs://"+ipfs_uri,
-        'ipfs_uri': 'ipfs://bafkreiexhisb6dzzrj4ccmavpsjnyya6nh5b3kk3y6dopi3dt3rtpvr2gq'
+        'ipfs_uri': "ipfs://"+ipfs_uri,
     }
     logging.info(fa2_token_data)
     mint_call_resp = requests.post(
@@ -93,7 +92,7 @@ def mint_nft(address):
         headers=HEADERS,
     )
     nft = mint_monitoring_resp.json()
-    print(nft)
+    logging.info(nft)
     return json.dumps({"state": nft["state"], "id": id})
 
 
@@ -282,7 +281,7 @@ def status():
         headers=HEADERS,
     )
     nft = mint_monitoring_resp.json()
-    print(nft)
+    logging.info(nft)
     return json.dumps({"state": nft["state"]})
 
 
