@@ -170,7 +170,7 @@ def dapp_wallet(red):
                                         
                                 })"""
         status=json.loads(mint_nft(session["addressVerified"]))["state"]
-        data={"status":status}
+        data={"status":status,"id":json.loads(mint_nft(session["addressVerified"]))["id"]}
         return json.dumps(data)
 
 
