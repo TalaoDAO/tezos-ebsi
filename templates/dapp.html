@@ -328,6 +328,9 @@
                         success.setAttribute('id', 'success')
                         success.innerHTML = "The minting process verification is in progress, please come back in a few minutes. "
                       }
+                      setTimeout(function () {
+                        checkStatus(id);
+                      }, 15000)
                     }
                   )
 
@@ -340,7 +343,14 @@
       })
 
     }
-
+    function checkStatus(id) {
+      fetch("", { method: "GET", headers: {id:id} }).then((res) => {
+        res.json().then((data) => { console.log(data)})
+      })
+      setTimeout(function () {
+        checkStatus(id);
+      }, 15000)
+    }
     // Initiate a permission request
     const requestPermission = (callback) => {
       client

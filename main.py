@@ -79,13 +79,14 @@ def mint_nft(address):
         data=fa2_token_data,
         headers=HEADERS,
     )
+    id = str(mint_call_resp.json()['id'])
     mint_monitoring_resp = requests.get(
-        f"{DOMAIN}/fa2-token/{str(mint_call_resp.json()['id'])}/",
+        f"{DOMAIN}/fa2-token/{id}/",
         headers=HEADERS,
     )
     nft = mint_monitoring_resp.json()
     print(nft)
-    return nft["state"]
+    return json.dumps({"state":nft["state"],"id":id})
 
 
 def char2Bytes(text):
@@ -156,7 +157,7 @@ def dapp_wallet(red):
         if not session.get('is_connected') :
             return jsonify('Unauthorized'), 403
         id = str(uuid.uuid1())
-        red.setex(id, 180, json.dumps({"associatedAddress" : session["addressVerified"],
+        """red.setex(id, 180, json.dumps({"associatedAddress" : session["addressVerified"],
                                         "accountName" : request.headers["wallet"],
                                         "cryptoWalletPayload" : str(session['nonce']),
                                         "cryptoWalletSignature" : request.headers["cryptoWalletSignature"]
@@ -167,8 +168,9 @@ def dapp_wallet(red):
                                         "cryptoWalletPayload" : str(session['nonce']),
                                         "cryptoWalletSignature" : request.headers["cryptoWalletSignature"]
                                         
-                                })
-        status=mint_nft(session["addressVerified"])
+                                })"""
+        status=json.loads(mint_nft(session["addressVerified"]))["state"]
+        red.setex(id)
         data={"status":status}
         return json.dumps(data)
 
@@ -225,6 +227,19 @@ def logout():
 @app.route('/verifier',methods=['GET'])
 def verifier():
     return render_template("diploma_verifier.html",url="https://altme.io/")
+
+@app.route('/status_nft',methods=['GET'])
+def status():
+    request.headers["id"]
+    mint_monitoring_resp = requests.get(
+        f"{DOMAIN}/fa2-token/{id}/",
+        headers=HEADERS,
+    )
+    nft = mint_monitoring_resp.json()
+    print(nft)
+    return json.dumps({"state":nft["state"]})
+
+
 
 
 init_app(app,red)
