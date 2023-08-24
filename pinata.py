@@ -23,5 +23,5 @@ def add_to_ipfs(data_dict, name) :
         return None
     else :
         return r.json()['IpfsHash']
-print(add_to_ipfs({"test":"json"},"test_name"))
+print(add_to_ipfs({"test":"json2"},"test_name"))
     

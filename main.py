@@ -80,6 +80,7 @@ def mint_nft(address):
         'token_amount': 1,
         'ipfs_uri': ipfs_uri,
     }
+    print(ipfs_uri)
     mint_call_resp = requests.post(
         f"{DOMAIN}/fa2-token/",
         data=fa2_token_data,
