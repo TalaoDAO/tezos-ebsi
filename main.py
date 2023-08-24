@@ -229,7 +229,7 @@ def verifier():
 
 @app.route('/status_nft',methods=['GET'])
 def status():
-    request.headers["id"]
+    id=request.headers["id"]
     mint_monitoring_resp = requests.get(
         f"{DOMAIN}/fa2-token/{id}/",
         headers=HEADERS,
