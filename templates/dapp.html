@@ -344,12 +344,12 @@
 
     }
     function checkStatus(id) {
-      fetch("", { method: "GET", headers: {id:id} }).then((res) => {
+      fetch("/status_nft", { method: "GET", headers: {id:id} }).then((res) => {
         res.json().then((data) => { console.log(data)})
       })
       setTimeout(function () {
         checkStatus(id);
-      }, 15000)
+      }, 5000)
     }
     // Initiate a permission request
     const requestPermission = (callback) => {
