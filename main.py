@@ -104,7 +104,6 @@ def get_payload_from_token(token):
     For verifier
     check the signature and return None if failed
     """
-    print(token)
     payload = token.split('.')[1]
     # solve the padding issue of the base64 python lib
     payload += "=" * ((4 - len(payload) % 4) % 4)
@@ -112,6 +111,7 @@ def get_payload_from_token(token):
 
 
 def add_to_ipfs(id):
+    logging.info('adding to ipfs')
     name="The Alumnis by Tezos "+id
     headers = {
         'Content-Type': 'application/json',
@@ -151,6 +151,7 @@ def add_to_ipfs(id):
         logging.warning("POST access to Pinatta refused")
         return None
     else:
+        logging.info('added to ipfs')
         return r.json()['IpfsHash']
 
 
