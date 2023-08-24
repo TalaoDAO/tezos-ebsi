@@ -112,7 +112,7 @@ def get_payload_from_token(token):
 
 def add_to_ipfs(id):
     logging.info('adding to ipfs')
-    name="The Alumnis by Tezos "+id
+    name="The Alumnis by Tezos "+str(id)
     headers = {
         'Content-Type': 'application/json',
         'pinata_api_key': PINATA_API_KEY,
