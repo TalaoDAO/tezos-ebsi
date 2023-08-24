@@ -71,6 +71,7 @@ def mint_nft(address):
     token_id = int(requests.get(
         "https://api.ghostnet.tzkt.io/v1/tokens?contract=KT1VuCBGQW4WakHj1PXhFC1G848dKyNy34kB&sort.desc=tokenId&limit=1").json()[0]["tokenId"])+1
     ipfs_uri = add_to_ipfs(token_id)
+    logging.info(ipfs_uri)
     fa2_token_data = {
         'contract': FA2_CONTRACT_ID,
         'sender': ACCOUNT_ID,
