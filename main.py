@@ -78,7 +78,7 @@ def mint_nft(address):
         'owner': address,
         'token_id': token_id,
         'token_amount': 1,
-        'ipfs_uri': ipfs_uri,
+        'ipfs_uri': "ipfs://"+ipfs_uri,
     }
     logging.info(fa2_token_data)
     mint_call_resp = requests.post(
