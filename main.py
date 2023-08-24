@@ -205,6 +205,9 @@ def error():
     logging.info(error)
     return render_template("error.html")
 
+@app.route('/altme-identity/static/img/<filename>',methods=['GET'])
+def serve_img(filename):
+    return send_file('./static/img/'+filename, download_name=filename)
 
 @app.route('/static/<filename>',methods=['GET'])
 def serve_static(filename):
