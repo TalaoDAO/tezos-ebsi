@@ -170,7 +170,6 @@ def dapp_wallet(red):
                                         
                                 })"""
         status=json.loads(mint_nft(session["addressVerified"]))["state"]
-        red.setex(id)
         data={"status":status}
         return json.dumps(data)
 
