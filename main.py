@@ -127,9 +127,9 @@ def add_to_ipfs(id):
             "editions": "1",
             "description": "To reward newly graduated European students who have claimed their diploma in the verifiable credential format (EBSI), Altme and the Tezos Foundation are offering a unique non-transferable NFT to each student ! Each NFT represents a unique proof of graduation and offers exclusive advantages, benefits and opportunities in the Tezos ecosystem.",
             "symbol": "ALM",
-            "artifactUri": "ipfs://bafkreibonqljtq7qy7qod33ncplxljpipjvg4qddhnusicypqz6dm6qb5e",
-            "displayUri": "ipfs://bafybeicz2hep264bj3teyqiccovx3zez454mi57cd7ozzsbk3i4xthruxy",
-            "thumbnailUri": "ipfs://bafybeicz2hep264bj3teyqiccovx3zez454mi57cd7ozzsbk3i4xthruxy",
+            "artifactUri": "ipfs://QmWe1VkU9UffbmsNzB7eXvdLnXZGPBn2jMVWhcqCweKANq",
+            "displayUri": "ipfs://QmcUBZMW7HAX6VHtqP3V5yxx52jcj94j9rpbtuNMgGpRtf",
+            "thumbnailUri": "ipfs://QmcUBZMW7HAX6VHtqP3V5yxx52jcj94j9rpbtuNMgGpRtf",
             "formats": [
                 {
                     "uri": "ipfs://bafkreibonqljtq7qy7qod33ncplxljpipjvg4qddhnusicypqz6dm6qb5e",

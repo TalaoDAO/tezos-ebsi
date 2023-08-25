@@ -23,5 +23,23 @@ def add_to_ipfs(data_dict, name) :
         return None
     else :
         return r.json()['IpfsHash']
-print(add_to_ipfs({"test":"json2"},"test_name"))
+    
+def add_file_to_pinata (filename) :
+    try :
+        this_file = open(filename, mode='rb')  # b is important -> binary
+    except IOError :
+        logging.error('IOEroor open file ')
+        return None
+    headers = { 'pinata_api_key': PINATA_API_KEY,
+              'pinata_secret_api_key':  PINATA_SECRET_API_KEY}
+    payload = { 'file' : this_file.read()}
+    try :
+        response = requests.post('https://api.pinata.cloud/pinning/pinFileToIPFS', files=payload, headers=headers)
+    except :
+        logging.error('IPFS connexion problem')
+        return None
+    this_file.close()
+    return response.json()['IpfsHash']
+
+print(add_file_to_pinata("nft.png"))
     
