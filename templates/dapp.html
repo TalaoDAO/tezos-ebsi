@@ -216,9 +216,7 @@
 
             </div>
             <div id="rightBox"> <img id="draw" src="/static/img/diploma.png">
-              <button id="logout" class="hidden">Disconnect Wallet</button>
-              <button onclick="logoutOpenID()" id="logout2">Disconnect OpenID</button>
-
+              <button id="logout" >Disconnect Wallet</button>
             </div>
           </div>
         </div>
@@ -356,7 +354,6 @@
             document.getElementById("success").innerHTML = 'Your NFT minting failed... Please contact Altme support or try again later.'
             return
           } 
-
           console.log(data)
         })
       })
@@ -388,7 +385,7 @@
 
     document.getElementById('logout').addEventListener('click', () => {
       client.disconnect();
-      document.getElementById('logout').setAttribute('class', 'hidden')
+      logoutOpenID()
     })
 
 
