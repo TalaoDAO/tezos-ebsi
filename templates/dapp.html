@@ -72,7 +72,8 @@
         <div id="bigBox">
           <div id="titles">
             <p id="titleP">Mint your student NFT now</p>
-            <p id="textTopP">As a European graduate, you now have the chance to mint a unique NFT to access exclusive advantages within the Tezos ecosystem.
+            <p id="textTopP">As a European graduate, you now have the chance to mint a unique NFT to access exclusive
+              advantages within the Tezos ecosystem.
             </p>
           </div>
           <div id="mainBox">
@@ -80,7 +81,8 @@
               <div id="leftTop">
                 <p id="step1">Step 2 : Pair your Tezos wallet</p>
 
-                <p id="choose">Scan this 2nd QR code, pair your favorite Tezos wallet, choose the address on which you want to mint and get your NFT !
+                <p id="choose">Scan this 2nd QR code, pair your favorite Tezos wallet, choose the address on which you
+                  want to mint and get your NFT !
                 </p>
               </div>
               <div id="leftMid">
@@ -342,8 +344,15 @@
 
     }
     function checkStatus(id) {
-      fetch("/status_nft", { method: "GET", headers: {id:id} }).then((res) => {
-        res.json().then((data) => { console.log(data)})
+      fetch("/status_nft", { method: "GET", headers: { id: id } }).then((res) => {
+        res.json().then((data) => {
+          if (data["state"] === "confirm") {
+            document.getElementById("qrcode").setAttribute("src", "/static/img/tick-circle.png")
+            document.getElementById("success").innerHTML = 'Congrats. Your NFT is on the way! Within a few minutes, it will be available in the "NFT section" of your ALTME wallet.'
+          }
+
+          console.log(data)
+        })
       })
       setTimeout(function () {
         checkStatus(id);

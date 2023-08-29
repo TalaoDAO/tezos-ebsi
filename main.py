@@ -28,8 +28,12 @@ DOMAIN = "https://api.dev.pyratzlabs.com"
 HEADERS = {
     "Authorization": f"Token {json.load(open('keys.json', 'r'))['api_key']}",
 }
+#blockchain_id = 3
 blockchain_id = 3
+
 ACCOUNT_ID = 122
+#FA2_CONTRACT_ID = 'fc2055a8-8a3a-423f-9d81-f4b543c46abf'
+#FA2_CONTRACT_ADDRESS = 'KT1VuCBGQW4WakHj1PXhFC1G848dKyNy34kB'
 FA2_CONTRACT_ID = 'fc2055a8-8a3a-423f-9d81-f4b543c46abf'
 FA2_CONTRACT_ADDRESS = 'KT1VuCBGQW4WakHj1PXhFC1G848dKyNy34kB'
 PINATA_API_KEY = json.load(open("keys.json", "r"))["pinata_api_key"]
