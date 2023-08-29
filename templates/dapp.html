@@ -386,7 +386,6 @@
     document.getElementById('logout').addEventListener('click', () => {
       client.disconnect();
       logoutOpenID()
-      location.reload();
     })
 
 
@@ -416,7 +415,7 @@
       requestPermission()
     })
     function logoutOpenID() {
-      fetch('/logout', { method: 'POST' })
+      fetch('/logout', { method: 'POST' }).then(()=>location.reload())
     }
     const items = document.querySelectorAll('.accordion button');
     function toggleAccordion() {
