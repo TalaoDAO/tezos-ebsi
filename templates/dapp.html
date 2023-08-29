@@ -386,6 +386,7 @@
     document.getElementById('logout').addEventListener('click', () => {
       client.disconnect();
       logoutOpenID()
+      location.reload();
     })
 
 
