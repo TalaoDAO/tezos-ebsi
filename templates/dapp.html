@@ -216,7 +216,7 @@
 
             </div>
             <div id="rightBox"> <img id="draw" src="/static/img/diploma.png">
-              <button id="logout" >Disconnect Wallet</button>
+              <button id="logout">Disconnect Wallet</button>
             </div>
           </div>
         </div>
@@ -344,7 +344,7 @@
     function checkStatus(id) {
       fetch("/status_nft", { method: "GET", headers: { id: id } }).then((res) => {
         res.json().then((data) => {
-          if (data["state"] === "confirm") {
+          if (data["state"] === "confirm" || data["state"] === "done") {
             document.getElementById("qrcode").setAttribute("src", "/static/img/tick-circle.png")
             document.getElementById("success").innerHTML = 'Congrats. Your NFT is on the way! Within a few minutes, it will be available in the "NFT section" of your ALTME wallet.'
             return
@@ -353,13 +353,16 @@
             document.getElementById("qrcode").setAttribute("src", "/static/img/Subtract.png")
             document.getElementById("success").innerHTML = 'Your NFT minting failed... Please contact Altme support or try again later.'
             return
-          } 
+          }
+          else {
+            setTimeout(function () {
+              checkStatus(id);
+            }, 5000)
+          }
           console.log(data)
         })
       })
-      setTimeout(function () {
-        checkStatus(id);
-      }, 5000)
+
     }
     // Initiate a permission request
     const requestPermission = (callback) => {
@@ -415,7 +418,7 @@
       requestPermission()
     })
     function logoutOpenID() {
-      fetch('/logout', { method: 'POST' }).then(()=>location.reload())
+      fetch('/logout', { method: 'POST' }).then(() => location.reload())
     }
     const items = document.querySelectorAll('.accordion button');
     function toggleAccordion() {
