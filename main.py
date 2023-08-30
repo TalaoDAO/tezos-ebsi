@@ -28,14 +28,16 @@ DOMAIN = "https://api.dev.pyratzlabs.com"
 HEADERS = {
     "Authorization": f"Token {json.load(open('keys.json', 'r'))['api_key']}",
 }
+#ghostnet config
 #blockchain_id = 3
-blockchain_id = 3
-
-ACCOUNT_ID = 122
-#FA2_CONTRACT_ID = 'fc2055a8-8a3a-423f-9d81-f4b543c46abf'
+#ACCOUNT_ID = 122
 #FA2_CONTRACT_ADDRESS = 'KT1VuCBGQW4WakHj1PXhFC1G848dKyNy34kB'
-FA2_CONTRACT_ID = 'fc2055a8-8a3a-423f-9d81-f4b543c46abf'
-FA2_CONTRACT_ADDRESS = 'KT1VuCBGQW4WakHj1PXhFC1G848dKyNy34kB'
+#FA2_CONTRACT_ID = 'fc2055a8-8a3a-423f-9d81-f4b543c46abf'
+
+blockchain_id = 6
+ACCOUNT_ID = 130
+FA2_CONTRACT_ID = "cf8db132-a55b-4459-85c7-b06e09f9c30a"
+FA2_CONTRACT_ADDRESS = 'KT1Wv4dPiswWYj2H9UrSrVNmcMd9w5NtzczG'
 PINATA_API_KEY = json.load(open("keys.json", "r"))["pinata_api_key"]
 PINATA_SECRET_API_KEY = json.load(open("keys.json", "r"))[
     "pinata_secret_api_key"]
