@@ -66,7 +66,7 @@ client_metadata = ClientMetadata(
     # post_logout_redirect_uris=['http://127.0.0.1:4000/logout']
     # your post logout uri (optional)
 )
-provider_config = ProviderConfiguration(issuer='https://talao.co/sandbox/ebsi',
+provider_config = ProviderConfiguration(issuer='https://sansbox/verifier/app/authorize',
                                         client_metadata=client_metadata)
 auth = OIDCAuthentication({'default': provider_config}, app)
 
