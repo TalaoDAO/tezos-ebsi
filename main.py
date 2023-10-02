@@ -7,7 +7,7 @@ import string
 import random
 import os
 import environment
-from datetime import datetime, timedelta
+from datetime import datetime
 from pytezos.crypto import key
 import logging
 import requests
@@ -74,8 +74,8 @@ red = redis.Redis(host='127.0.0.1', port=6379, db=0)
 
 
 def mint_nft(address):
-    token_id = int(requests.get(
-        "https://api.tzkt.io/v1/tokens?contract=KT1Wv4dPiswWYj2H9UrSrVNmcMd9w5NtzczG&sort.desc=tokenId&limit=1").json()[0]["tokenId"])+1
+    next_token_id = requests.get(f"{DOMAIN}/fa2/{FA2_CONTRACT_ID}/next_token_id",headers=HEADERS)
+    token_id = int(next_token_id.json()["next_token_id"])
     ipfs_uri = add_to_ipfs(token_id)
     logging.info(ipfs_uri)
     fa2_token_data = {
